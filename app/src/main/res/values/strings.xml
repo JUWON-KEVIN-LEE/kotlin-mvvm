@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MVVM-Kotlin</string>
+
+    <string name="hint_username">Github username</string>
+    <string name="default_info">Enter a GitHub username above to see its repositories</string>
+
+    <string name="text_stars">%d \nStars</string>
+    <string name="text_watchers">%d \nWatchers</string>
+    <string name="text_forks">%d \nForks</string>
+</resources>
