@@ -104,14 +104,29 @@ class MainViewModel(var context : Context?, var dataListener: DataListener?) : V
         }
 
         override fun onError(e: Throwable?) {
+            // for test
+            var repository = Repository()
+            repository.id = 1
+            repository.name = "Juwon-Kevin-Lee"
+            repository.description = "This is Juwon-Kevin-Lee's repository. welcome!"
+            repository.watchers = 1345
+            repository.stars = 21
+            repository.forks = 10
+            var testRepositories = ArrayList<Repository>()
+            testRepositories.add(repository)
+            dataListener?.onRepositoriesChanged(testRepositories)
             progressVisibility.set(View.INVISIBLE)
-            infoMessage.set("Oops, Octocat doesn't know that username")
-            infoMessageVisibility.set(View.VISIBLE)
+            recyclerViewVisibility.set(View.VISIBLE)
+
+//            progressVisibility.set(View.INVISIBLE)
+//            infoMessage.set("Oops, Octocat doesn't know that username")
+//            infoMessageVisibility.set(View.VISIBLE)
         }
 
         override fun onComplete() {
             dataListener?.onRepositoriesChanged(repositories!!)
             progressVisibility.set(View.INVISIBLE)
+
             if(!repositories?.isEmpty()!!) {
                 recyclerViewVisibility.set(View.VISIBLE)
             } else {

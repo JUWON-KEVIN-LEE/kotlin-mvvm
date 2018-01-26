@@ -39,11 +39,10 @@ class RepoViewModel(var context : Context, var repository : Repository) : BaseOb
 
     }
 
-    // kotlin 에는 static 이 존재하지 않는다! kotlin compiler doesn't like ...
     companion object {
-        fun setRepository(repoViewModel: RepoViewModel?, repository: Repository) {
-            repoViewModel?.repository = repository
-            repoViewModel?.notifyChange()
+        fun setRepository(repoViewModel: RepoViewModel, repository: Repository) {
+            repoViewModel.repository = repository
+            repoViewModel.notifyChange()
         }
     }
 }

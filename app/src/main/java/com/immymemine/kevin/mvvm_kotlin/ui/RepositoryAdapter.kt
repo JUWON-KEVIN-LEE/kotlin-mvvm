@@ -40,8 +40,8 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
             if(binding.viewModel == null) {
                 binding.viewModel = RepoViewModel(itemView.context, repository)
             } else {
-                // binding 의 변수인 view model 과 repository 만 바꿔주면서 recycling
-                RepoViewModel.setRepository(binding.viewModel, repository)
+                // binding 의 변수인 view model 의 repository 만 바꿔주면서 recycling
+                RepoViewModel.setRepository(binding.viewModel!!, repository)
             }
         }
     }
